@@ -6,6 +6,8 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.EnumSource;
 import org.junit.jupiter.params.provider.ValueSource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.EnumSet;
 import java.util.concurrent.TimeUnit;
@@ -15,9 +17,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AppTest
 {
-    /**
-     * Rigorous Test :-)
-     */
+    static Logger logger = LoggerFactory.getLogger(AppTest.class);
+
 
     Integer repeated = 0;
 
@@ -26,6 +27,7 @@ public class AppTest
     @Order(1)
     public void simpleTest()
     {
+        logger.info("Логируем строчку");
         assertTrue( true );
     }
 
