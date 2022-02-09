@@ -17,6 +17,11 @@ public class AssertAssumTest {
     String myString = "str";
 
     @Test
+    void notAtEST(){
+        System.out.println("Это не тест");
+    }
+
+    @Test
     void test(){
         assertTrue(myBoolean, "Не true");
         assertFalse(!myBoolean, "Не False");
