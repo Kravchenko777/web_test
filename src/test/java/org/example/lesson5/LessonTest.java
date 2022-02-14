@@ -22,6 +22,7 @@ public class LessonTest extends AbstractTest{
 
         // Создадим экземпляр класса Actions
         Actions loginIn = new Actions(getDriver());
+
         loginIn.sendKeys(getDriver().findElement(By.id("user-identifier-input")),"kravmaxim@gmail.com")
                 .click(getDriver().findElement(By.id("password")))
                 .sendKeys("vbPNKsk5GUFStb@")
@@ -48,6 +49,11 @@ public class LessonTest extends AbstractTest{
     @Test
     void cookieTest(){
         getDriver().manage().addCookie(new Cookie("promo_code", "november2"));
+
+
+        for(Cookie cookie: getDriver().manage().getCookies()){
+            System.out.println(cookie.getName());
+        }
     }
 
 }

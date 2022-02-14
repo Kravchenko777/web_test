@@ -1,10 +1,7 @@
 package org.example.lesson5;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -28,9 +25,14 @@ public class SimpleTest {
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
     }
 
+    @AfterEach
+    void getPage(){
+        driver.get("https://www.vstu.ru");
+    }
+
     @Test
     void test() throws InterruptedException {
-        driver.get("https://www.vstu.ru");
+
         WebElement webElement = driver.findElement(By.cssSelector(".sb-icon-search"));
         webElement.click();
         Thread.sleep(1000);

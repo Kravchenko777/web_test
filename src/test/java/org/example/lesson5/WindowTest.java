@@ -17,5 +17,9 @@ public class WindowTest extends AbstractTest{
 
         Thread.sleep(1000);
         getDriver().switchTo().window(originalWindow);
+
+        for(String windowHandle: getDriver().getWindowHandles()){
+            System.out.println(windowHandle);
+        }
     }
 }

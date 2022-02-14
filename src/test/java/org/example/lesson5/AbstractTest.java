@@ -19,17 +19,17 @@ public abstract class AbstractTest {
     static void init(){
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--incognito");
+        //options.addArguments("--incognito");
         //options.addArguments("--headless");
-        //options.addArguments("start-maximized");
+        options.addArguments("start-maximized");
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
     }
 
     @BeforeEach
     void goTo(){
-       /* Assertions.assertDoesNotThrow( ()-> driver.navigate().to("https://www.bbc.com/"),
-                "Страница не доступна");*/
+        Assertions.assertDoesNotThrow( ()-> driver.navigate().to("https://www.bbc.com/"),
+                "Страница не доступна");
     }
 
 
