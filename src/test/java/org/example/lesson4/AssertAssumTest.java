@@ -41,10 +41,10 @@ public class AssertAssumTest {
 
     @Test
     void exec() throws InterruptedException {
-        Assertions.assertTimeout(ofMillis(10), () -> {
+/*        Assertions.assertTimeout(ofMillis(10), () -> {
             Thread.sleep(200);
             return "result";
-        });
+        });*/
 
         Assertions.assertTimeoutPreemptively(Duration.ofMillis(10), () -> {
             Thread.sleep(200);
@@ -73,7 +73,7 @@ public class AssertAssumTest {
 
     @Test
     void assume(){
-        assumeTrue(5 > 10);
+        assumeTrue(5 > 1);
         assertEquals(5 + 2, 7);
 
     }
@@ -82,8 +82,8 @@ public class AssertAssumTest {
     void getAll(){
 
         Assertions.assertAll(
-                () -> assertTrue(myBoolean),
-                () -> assertFalse(myBoolean)
+                () -> assertTrue(!myBoolean),
+                () -> assertFalse(!myBoolean)
         );
     }
 }
