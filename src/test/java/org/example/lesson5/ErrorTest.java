@@ -17,13 +17,18 @@ public class ErrorTest extends AbstractTest {
     @Test
     void test() throws InterruptedException {
         getDriver().get("https://www.vstu.ru"); //https://www.vstu.ru
-        WebElement webElement = getDriver().findElement(By.cssSelector(".sb-icon-search"));
+        WebElement webElement = getDriver().findElement(By.cssSelector(".sb5-icon-search"));
         webElement.click();
 
         Wait<WebDriver> wait = new FluentWait<WebDriver>(getDriver())
                 .withTimeout(Duration.ofSeconds(30))
                 .pollingEvery(Duration.ofSeconds(5))
                 .ignoring(NoSuchElementException.class);
+
+       // org.openqa.selenium.ElementNotInteractableException;
+       // org.openqa.selenium.NoSuchElementException;
+
+       Thread.sleep(10000);
 
         WebElement webElement2 = wait.until(new Function<WebDriver, WebElement>() {
                                         public WebElement apply(WebDriver driver) {
