@@ -24,7 +24,7 @@ public class LoginInTest extends AbstractTest {
         new BBCMainPage(getWebDriver()).goToAccountPage();
         Assertions.assertTrue(getWebDriver().getTitle().equals("BBC – Sign in"), "страница входа недоступна");
         new LoginPage(getWebDriver()).loginIn("kravmaxim@gmail.com","vbPNKsk5GUFStb@");
-       // Assertions.assertTrue(webDriver.findElement(By.id("idcta-username")).getText().equals("Your account"));
+        Assertions.assertTrue(getWebDriver().findElement(By.id("idcta-username")).getText().equals("Your account"));
     }
 
 
