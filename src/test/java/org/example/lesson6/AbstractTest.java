@@ -45,7 +45,7 @@ public abstract class AbstractTest {
     @AfterAll
     public static void exit(){
 
-        if(webDriver !=null) webDriver.quit();
+        if(eventDriver !=null) eventDriver.quit();
     }
 
     @AfterEach
