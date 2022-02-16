@@ -1,4 +1,4 @@
-package org.example.lesson6;
+package org.example.lesson7;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;

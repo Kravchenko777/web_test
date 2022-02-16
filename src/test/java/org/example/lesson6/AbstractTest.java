@@ -1,6 +1,7 @@
 package org.example.lesson6;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.example.lesson7.MyWebDriverEventListener;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -59,8 +60,6 @@ public abstract class AbstractTest {
 
             }
 
-
-            Assertions.fail();
         }
 
     }
