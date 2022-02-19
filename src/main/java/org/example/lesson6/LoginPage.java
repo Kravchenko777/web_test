@@ -43,7 +43,13 @@ public class LoginPage extends AbstractPage {
     public void loginIn(String login, String password){
 
         Actions loginIn = new Actions(getDriver());
-        loginIn.sendKeys(this.login,login).click(this.password).sendKeys(password).click(this.submit).build().perform();
+        loginIn
+        .sendKeys(this.login,login)
+        .click(this.password)
+        .sendKeys(password)
+        .click(this.submit)
+        .build()
+        .perform();
     }
 
 

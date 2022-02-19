@@ -1,7 +1,6 @@
-package org.example.lesson6;
+package org.example.lesson7;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.example.lesson7.MyWebDriverEventListener;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,6 +15,7 @@ import java.util.List;
 public abstract class AbstractTest {
 
     static WebDriver webDriver;
+    static EventFiringWebDriver eventDriver;
 
     @BeforeAll
     static void setDriver(){
@@ -26,9 +26,11 @@ public abstract class AbstractTest {
         options.addArguments("start-maximized");
         options.setPageLoadTimeout(Duration.ofSeconds(10));
 
+        eventDriver = new EventFiringWebDriver(new ChromeDriver(options));
+        eventDriver.register(new MyWebDriverEventListener());
 
-        webDriver = new ChromeDriver(options);
-        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+//        webDriver = new ChromeDriver(options);
+        eventDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
 
     @BeforeEach
@@ -42,10 +44,26 @@ public abstract class AbstractTest {
     @AfterAll
     public static void exit(){
 
-        if(webDriver !=null) webDriver.quit();
+        if(eventDriver !=null) eventDriver.quit();
+    }
+
+    @AfterEach
+    public void checkBrowser(){
+        List<LogEntry> allLogRows = getWebDriver().manage().logs().get(LogType.BROWSER).getAll();
+        if(!allLogRows.isEmpty()){
+
+            if (allLogRows.size() > 0 ) {
+                allLogRows.forEach(logEntry -> {
+                    System.out.println(logEntry.getMessage());
+                });
+
+            }
+
+        }
+
     }
 
     public WebDriver getWebDriver(){
-        return this.webDriver;
+        return this.eventDriver;
     }
 }
