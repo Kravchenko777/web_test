@@ -14,7 +14,6 @@ import java.util.List;
 
 public abstract class AbstractTest {
 
-    static WebDriver webDriver;
     static EventFiringWebDriver eventDriver;
 
     @BeforeAll
@@ -29,7 +28,6 @@ public abstract class AbstractTest {
         eventDriver = new EventFiringWebDriver(new ChromeDriver(options));
         eventDriver.register(new MyWebDriverEventListener());
 
-//        webDriver = new ChromeDriver(options);
         eventDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
 
