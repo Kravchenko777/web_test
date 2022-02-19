@@ -9,7 +9,6 @@ import org.junit.jupiter.params.provider.ValueSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Base64;
 import java.util.EnumSet;
 import java.util.concurrent.TimeUnit;
 
@@ -28,8 +27,8 @@ public class AppTest
     @Order(1)
     public void simpleTest()
     {
-        logger.info("Логируем строчку");
-        logger.error("Сообщение");
+        logger.info("Инфо");
+        logger.error("ошибка");
         assertTrue( true );
     }
 
