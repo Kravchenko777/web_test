@@ -76,7 +76,7 @@ public class MyWebDriverEventListener implements WebDriverEventListener {
 
     @Override
     public void afterFindBy(By by, WebElement element, WebDriver driver) {
-
+        System.out.println("I have finded element: "+element.getTagName());
     }
 
     @Override
@@ -121,7 +121,7 @@ public class MyWebDriverEventListener implements WebDriverEventListener {
 
     @Override
     public void onException(Throwable throwable, WebDriver driver) {
-
+        System.out.println("Throwable to print message: "+throwable.getMessage());
     }
 
     @Override

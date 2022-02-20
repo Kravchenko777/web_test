@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class MyUtils {
 
-    public static void makeScreenshot(WebDriver driver, String filename) {
+    public static File makeScreenshot(WebDriver driver, String filename) {
         File temp = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         File destination = new File("./target/" + filename);
         try {
@@ -18,5 +18,6 @@ public class MyUtils {
         } catch (IOException exception) {
             exception.printStackTrace();
         }
+        return destination;
     }
 }
