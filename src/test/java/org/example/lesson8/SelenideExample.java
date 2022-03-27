@@ -1,12 +1,15 @@
 package org.example.lesson8;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -27,6 +30,10 @@ public class SelenideExample {
         $(By.id("password-input")).sendKeys("vbPNKsk5GUFStb@");
         $(By.id("submit-button")).submit();
         $(By.id("idcta-username")).shouldHave(text("Your account"));
+
+        WebDriver webDriver = $(By.id("id_")).getWrappedDriver();
+        SelenideElement selenideElement = $(By.id("id_"));
+        selenideElement.shouldBe(visible);
 
     }
 

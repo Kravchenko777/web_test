@@ -17,6 +17,7 @@ public class CucumberTest {
 
     @When("I ask whether it's Friday yet")
     public void i_ask_whether_it_s_Friday_yet() {
+
         actualAnswer = isItFriday(today);
     }
 
