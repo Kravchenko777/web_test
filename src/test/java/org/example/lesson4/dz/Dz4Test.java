@@ -1,4 +1,4 @@
-package org.example.lesson5.dz;
+package org.example.lesson4.dz;
 
 import org.example.dz.ExampleClass;
 import org.example.dz.MyException;
