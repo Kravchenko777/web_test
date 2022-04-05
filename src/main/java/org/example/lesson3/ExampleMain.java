@@ -25,6 +25,8 @@ public class ExampleMain {
         options.addArguments("--incognito");
         //options.addArguments("--headless");
         options.addArguments("start-maximized");
+
+
         WebDriver driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver.get("https://google.com");
@@ -63,6 +65,7 @@ public class ExampleMain {
             System.out.println(e.getSupportUrl());
         }
 
+        //Thread.sleep(10000l);
         //Завершаем работу с ресурсом
         // driver.quit();
     }
