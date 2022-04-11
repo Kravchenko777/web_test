@@ -1,4 +1,4 @@
-package org.example.lesson6;
+package org.example.lesson6.bbc;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

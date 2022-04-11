@@ -1,4 +1,4 @@
-package org.example.lesson6;
+package org.example.lesson6.bbc;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;

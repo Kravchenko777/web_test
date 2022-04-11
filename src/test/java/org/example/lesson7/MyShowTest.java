@@ -1,8 +1,7 @@
 package org.example.lesson7;
 
 import io.qameta.allure.*;
-import org.example.lesson6.AbstractTest;
-import org.example.lesson7.MyUtils;
+import org.example.lesson6.bbc.AbstractTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

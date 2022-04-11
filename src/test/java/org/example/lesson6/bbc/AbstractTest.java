@@ -1,17 +1,19 @@
-package org.example.lesson6;
+package org.example.lesson6.bbc;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
+import org.example.lesson7.MyWebDriverEventListener;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.logging.LogEntry;
+import org.openqa.selenium.logging.LogType;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import java.time.Duration;
+import java.util.List;
 
-public class AbstractTest {
+public abstract class AbstractTest {
 
     static WebDriver webDriver;
 
@@ -31,7 +33,7 @@ public class AbstractTest {
 
     @BeforeEach
     void initMainPage(){
-        Assertions.assertDoesNotThrow( ()-> getWebDriver().navigate().to("https://www.vstu.ru"),
+        Assertions.assertDoesNotThrow( ()-> getWebDriver().navigate().to("https://www.bbc.com/"),
                 "Страница не доступна");
         Assertions.assertTrue(true);
 
