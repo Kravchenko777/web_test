@@ -19,7 +19,7 @@ public abstract class AbstractTest {
     static void init(){
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--incognito");
+        options.addArguments("--incognito");
         //options.addArguments("--headless");
         options.addArguments("start-maximized");
         driver = new ChromeDriver(options);
@@ -28,7 +28,7 @@ public abstract class AbstractTest {
 
     @BeforeEach
     void goTo(){
-        Assertions.assertDoesNotThrow( ()-> driver.navigate().to("https://www.bbc.com/"),
+        Assertions.assertDoesNotThrow( ()-> driver.navigate().to("https://www.vstu.ru"),
                 "Страница не доступна");
     }
 

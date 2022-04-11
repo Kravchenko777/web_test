@@ -16,7 +16,7 @@ public class ErrorTest extends AbstractTest {
 
     @Test
     void test() throws InterruptedException {
-        getDriver().get("https://www.vstu.ru"); //https://www.vstu.ru
+        getDriver().get("https://www.vstu.ru");
         WebElement webElement = getDriver().findElement(By.cssSelector(".sb5-icon-search"));
         webElement.click();
 

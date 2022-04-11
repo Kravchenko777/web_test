@@ -25,7 +25,7 @@ public class SimpleTest {
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
     }
 
-    @AfterEach
+    @BeforeEach
     void getPage(){
         driver.get("https://www.vstu.ru");
     }

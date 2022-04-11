@@ -12,6 +12,7 @@ public class WindowTest extends AbstractTest{
         //Store the ID of the original window
         String originalWindow = getDriver().getWindowHandle();
 
+        //getDriver().switchTo().newWindow(WindowType.TAB);
         getDriver().switchTo().newWindow(WindowType.WINDOW);
         getDriver().navigate().to("https://www.google.com/");
 
