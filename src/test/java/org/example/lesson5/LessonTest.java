@@ -7,6 +7,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -104,6 +105,17 @@ public class LessonTest extends AbstractTest{
         getDriver().navigate().back();
         getDriver().navigate().forward();
         getDriver().navigate().refresh();
+    }
+
+    @Test
+    @Disabled
+    void voidElements(){
+        WebElement selectElement = getDriver().findElement(By.id("selectElementID"));
+        Select selectObject = new Select(selectElement);
+        selectObject.selectByIndex(1);
+        selectObject.selectByValue("value1");
+        selectObject.selectByVisibleText("Bread");
+        selectObject.deselectAll();
     }
 
 }
