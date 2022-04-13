@@ -50,7 +50,7 @@ public class LessonTest extends AbstractTest{
     void cookieTest(){
         getDriver().manage().addCookie(new Cookie("promo_code", "november2"));
         for(Cookie cookie: getDriver().manage().getCookies()){
-            System.out.println(cookie.getName());
+            System.out.println(cookie.getName() + " " + cookie.getExpiry());
         }
     }
 
