@@ -11,6 +11,6 @@ public class App
 
         System.out.println( "Hello World!" );
 
-        TestClass testClass = TestClass.getTestClass();
+        TestClass testClass =  TestClass.getTestClass();
     }
 }

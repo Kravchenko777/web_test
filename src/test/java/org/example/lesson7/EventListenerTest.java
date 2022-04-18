@@ -9,9 +9,6 @@ public class EventListenerTest extends AbstractTest{
 
     @Test
     void test(){
-        WebElement webElement = getWebDriver().findElement(By.cssSelector("div.orb-nav-section.orb-nav-links.orb-nav-focus>ul>li.orb-nav-sport>a"));
-        webElement.click();
-
         try {
             getWebDriver().findElement(By.id("нет такого"));
         } catch (NoSuchElementException e){
