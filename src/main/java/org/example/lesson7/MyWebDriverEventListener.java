@@ -71,7 +71,7 @@ public class MyWebDriverEventListener implements WebDriverEventListener {
 
     @Override
     public void beforeFindBy(By by, WebElement element, WebDriver driver) {
-
+        System.out.println("I want to find element: "+ by.toString());
     }
 
     @Override

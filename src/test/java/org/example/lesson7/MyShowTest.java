@@ -22,6 +22,7 @@ public class MyShowTest extends AbstractTest {
     @Description("Тест ничего не делает - такой тест нам тут не нужен")
     @Link("http://google.com")
     @Issue("https://bbc.com")
+    @TmsLink("")
     @Severity(SeverityLevel.MINOR)
     void testTrue(){
         Assertions.assertTrue(true);

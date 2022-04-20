@@ -17,4 +17,12 @@ public class EventListenerTest extends AbstractTest{
         }
 
     }
+
+
+    @Test
+    void test2(){
+        WebElement webElement = getWebDriver().findElement(By.cssSelector(".sb-icon-search"));
+        webElement.click();
+
+    }
 }
