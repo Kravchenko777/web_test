@@ -16,7 +16,7 @@ public class ExampleMain {
 
     public static void main(String[] args) {
 
-        /*        System.setProperty(
+/*                System.setProperty(
                 "webdriver.chrome.driver", "src/main/resources/chromedriver"
         );*/
 
@@ -49,6 +49,12 @@ public class ExampleMain {
         webElement1.click();
         webElement2.sendKeys("Поиск");
 
+
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         new WebDriverWait(driver, 5).until(ExpectedConditions.urlContains("google"));
 
         driver.navigate().to("https://google.com");

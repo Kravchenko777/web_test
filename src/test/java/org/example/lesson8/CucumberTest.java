@@ -48,4 +48,14 @@ public class CucumberTest {
     public void todayIsMonday() {
         today = "Monday";
     }
+
+    @Given("today is Monday{int}")
+    public void todayIsMonday(int arg0) {
+
+    }
+
+    @Then("I should be told to {string}")
+    public void iShouldBeToldTo(String arg0) {
+
+    }
 }
