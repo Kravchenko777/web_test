@@ -22,6 +22,7 @@ public class SimpleTest {
         //options.addArguments("--headless");
         options.addArguments("start-maximized");
         driver = new ChromeDriver(options);
+
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
     }
 

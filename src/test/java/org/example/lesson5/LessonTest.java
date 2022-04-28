@@ -52,6 +52,9 @@ public class LessonTest extends AbstractTest{
         for(Cookie cookie: getDriver().manage().getCookies()){
             System.out.println(cookie.getName() + " " + cookie.getExpiry());
         }
+
+        getDriver().manage().deleteCookie(new Cookie("promo_code", "november2"));
+
     }
 
     @Test
