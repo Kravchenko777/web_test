@@ -14,18 +14,22 @@ public class LoginInTest extends AbstractTest {
     void loginIn(){
         new BBCMainPage(getWebDriver()).goToAccountPage();
         Assertions.assertTrue(getWebDriver().getTitle().equals("BBC – Sign in"), "страница входа недоступна");
-        new LoginPage(getWebDriver()).setLogin("kravmaxim@gmail.com").setPassword("vbPNKsk5GUFStb@").loginIn();
+        new LoginPage(getWebDriver())
+                .setLogin("kravmaxim@gmail.com")
+                .setPassword("vbPNKsk5GUFStb@")
+                .loginIn();
         Assertions.assertTrue(getWebDriver().findElement(By.id("idcta-username")).getText().equals("Your account"));
 
     }
 
-   /* @Test
+    @Test
     void loginInSecond(){
         new BBCMainPage(getWebDriver()).goToAccountPage();
         Assertions.assertTrue(getWebDriver().getTitle().equals("BBC – Sign in"), "страница входа недоступна");
-        new LoginPage(getWebDriver()).loginIn("kravmaxim@gmail.com","vbPNKsk5GUFStb@");
+        new LoginPage(getWebDriver())
+                .loginIn("kravmaxim@gmail.com","vbPNKsk5GUFStb@");
         Assertions.assertTrue(getWebDriver().findElement(By.id("idcta-username")).getText().equals("Your account"));
-    }*/
+    }
 
 
 

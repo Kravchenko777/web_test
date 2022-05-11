@@ -1,8 +1,14 @@
 package org.example.lesson6;
 
+import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.NoSuchElementException;
 
 public class MainPageTest extends AbstractTest{
@@ -34,4 +40,5 @@ public class MainPageTest extends AbstractTest{
         Assertions.assertDoesNotThrow(() ->searchPage.takeItem(9));
 
     }
+
 }
