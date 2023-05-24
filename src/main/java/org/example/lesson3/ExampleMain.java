@@ -25,6 +25,7 @@ public class ExampleMain {
         options.addArguments("--incognito");
         //options.addArguments("--headless");
         options.addArguments("start-maximized");
+        options.addArguments("--remote-allow-origins=*");
 
 
         WebDriver driver = new ChromeDriver(options);
@@ -32,8 +33,8 @@ public class ExampleMain {
         driver.get("https://google.com");
 
         WebElement webElement1 = driver.findElement(By.name("q"));
-        WebElement webElement2 = driver.findElement(By.cssSelector("input.gLFyf.gsfi"));
-        WebElement webElement3 = driver.findElement(By.xpath(".//input[@name='q']"));
+        WebElement webElement2 = driver.findElement(By.cssSelector("textarea.gLFyf"));
+        WebElement webElement3 = driver.findElement(By.xpath(".//textarea[@name='q']"));
 
         try {
             WebElement webElementError = driver.findElement(By.name("error"));
@@ -47,7 +48,7 @@ public class ExampleMain {
         }
 
         webElement1.click();
-        webElement2.sendKeys("Поиск");
+        webElement3.sendKeys("Поиск");
 
 
         try {
