@@ -35,6 +35,10 @@ public class SimpleTest {
     void test() throws InterruptedException {
 
         WebElement webElement = driver.findElement(By.cssSelector(".sb-icon-search"));
+
+
+
+
         webElement.click();
         Thread.sleep(1000);
         WebElement webElement2 = driver.findElement(By.cssSelector(".sb-search-input"));

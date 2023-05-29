@@ -24,7 +24,7 @@ public class AssertAssumTest {
     @Test
     void test(){
         assertTrue(myBoolean, "Не true");
-        assertFalse(!myBoolean, "Не False");
+        assertFalse(myBoolean, "Не False");
         assertEquals(100,myInteger.intValue(), "Не 100");
         assertEquals("str", myString, "Другое значение переменно myString");
         Assertions.assertSame(myString, myString);
@@ -41,15 +41,15 @@ public class AssertAssumTest {
 
     @Test
     void exec() throws InterruptedException {
-        Assertions.assertTimeout(ofMillis(10), () -> {
-            Thread.sleep(200);
-            return "result";
-        });
-
-/*        Assertions.assertTimeoutPreemptively(Duration.ofMillis(10), () -> {
+/*        Assertions.assertTimeout(ofMillis(10), () -> {
             Thread.sleep(200);
             return "result";
         });*/
+
+        Assertions.assertTimeoutPreemptively(Duration.ofMillis(10), () -> {
+            Thread.sleep(200);
+            return "result";
+        });
     }
 
     @Test
@@ -73,7 +73,7 @@ public class AssertAssumTest {
 
     @Test
     void assume(){
-        assumeTrue(5 > 10);
+        assumeTrue(5 < 10);
         assertEquals(5 + 2, 7);
 
     }
@@ -83,7 +83,9 @@ public class AssertAssumTest {
 
         Assertions.assertAll(
                 () -> assertTrue(!myBoolean),
-                () -> assertFalse(!myBoolean)
+                () -> assertFalse(myBoolean)
         );
+
+
     }
 }

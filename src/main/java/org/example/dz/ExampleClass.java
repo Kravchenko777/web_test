@@ -4,9 +4,14 @@ package org.example.dz;
 public class ExampleClass {
 
     public int someMethod(int a, int b) throws MyException {
-        if(a<0 || b<0) throw new MyException("Текст моей ошибки");
+        if(testValue(a,b)) throw new MyException("Текст моей ошибки");
         int result = a+b;
         return result;
+    }
+
+    private boolean testValue(int a, int b){
+
+        return a<0 || b<0;
     }
 
 

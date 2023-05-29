@@ -12,7 +12,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+
+
 public class LessonTest extends AbstractTest{
+
+
+    @Test
+    void myTest(){
+        getDriver().findElement(By.xpath("/html/body/div[2]/div[11]/div/div/a[3]/span")).click();
+    }
 
     @Test
     void myActiontest() throws InterruptedException {
@@ -23,8 +31,8 @@ public class LessonTest extends AbstractTest{
         Actions search = new Actions(getDriver());
 
         search.click(getDriver().findElement(By.cssSelector(".sb-icon-search")))
-                .pause(1000l)
-                .sendKeys(getDriver().findElement(By.cssSelector(".sb-search-input")),"кравец")
+                .pause(1000l).sendKeys(getDriver()
+                .findElement(By.cssSelector(".sb-search-input")),"кравец")
                 .pause(1000l)
                 .click(getDriver().findElement(By.cssSelector(".sb-search-submit")))
                 .build()

@@ -15,6 +15,8 @@ public abstract class AbstractTest {
 
     private static WebDriver driver;
 
+    private static Long time = 5l;
+
     @BeforeAll
     static void init(){
         WebDriverManager.chromedriver().setup();
@@ -23,7 +25,7 @@ public abstract class AbstractTest {
         //options.addArguments("--headless");
         options.addArguments("start-maximized");
         driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(time, TimeUnit.SECONDS);
     }
 
     @BeforeEach

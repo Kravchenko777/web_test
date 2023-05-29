@@ -75,5 +75,6 @@ public class ExampleMain {
         //Thread.sleep(10000l);
         //Завершаем работу с ресурсом
         // driver.quit();
+       // driver.close();
     }
 }
