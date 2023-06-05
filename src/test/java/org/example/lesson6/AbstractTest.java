@@ -23,7 +23,7 @@ public class AbstractTest {
         //options.addArguments("--headless");
         options.addArguments("start-maximized");
         options.setPageLoadTimeout(Duration.ofSeconds(10));
-
+        options.addArguments("--remote-allow-origins=*");
 
         webDriver = new ChromeDriver(options);
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));

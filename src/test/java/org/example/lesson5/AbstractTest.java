@@ -24,6 +24,7 @@ public abstract class AbstractTest {
         options.addArguments("--incognito");
         //options.addArguments("--headless");
         options.addArguments("start-maximized");
+        options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(time, TimeUnit.SECONDS);
     }

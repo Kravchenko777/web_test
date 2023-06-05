@@ -24,6 +24,7 @@ public abstract class AbstractTest {
         options.addArguments("--headless");
         options.addArguments("start-maximized");
         options.setPageLoadTimeout(Duration.ofSeconds(10));
+        options.addArguments("--remote-allow-origins=*");
 
         eventDriver = new EventFiringWebDriver(new ChromeDriver(options));
         eventDriver.register(new MyWebDriverEventListener());

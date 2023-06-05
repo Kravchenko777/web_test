@@ -14,7 +14,7 @@ public class WindowTest extends AbstractTest{
 
         //getDriver().switchTo().newWindow(WindowType.TAB);
         getDriver().switchTo().newWindow(WindowType.WINDOW);
-        getDriver().navigate().to("https://www.google.com/");
+        getDriver().navigate()..to("https://www.google.com/");
 
         Thread.sleep(10000);
         getDriver().switchTo().window(originalWindow);
